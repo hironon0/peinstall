@@ -1,1 +1,6 @@
 site_name: My Docs
+pages:
+- Home : index.md
+- Guide :
+    - PE Detail : pedetail.md
+    - Create Builder : builder.md
