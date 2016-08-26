@@ -1,6 +1,14 @@
-site_name: My Docs
+site_name: 起動環境作成ガイド 
+
 pages:
-- Home : index.md
-- Guide :
-    - PE Detail : pedetail.md
-    - Create Builder : builder.md
+- Home: index.md
+- PE Builder: builderPE.md
+- Linux Builder: builderLinux.md
+
+markdown_extensions:
+ - toc:
+    baselevel: 3
+
+site_favicon: favicon.ico
+
+theme: slate

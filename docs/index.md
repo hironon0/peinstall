@@ -1,59 +1,12 @@
-# Windoows PE のインストールガイド
+# ActiveImate Protector 起動環境作成ガイド
 
-ActiveImage Protectorでシステムのリカバリーを行う場合には起動環境のメディアを作成する必要がありますではWidowsPEをインストールする必要があります
-WindowsPEには何種類かのToolKitがあり、各々インストール方法が違いますので注意が必要です。
- 
-## Windows ADK Anniversay Update 1607, 1511 
+## [Windows PE を使った起動環境](./builderPE.md)
+Windows 環境では基本的にWindows PEベースの起動環境を使用することをお勧めします。
+メーカ独自のデバイスドライバ、バックアップ対象マシンにインストールされているドライバを起動環境に追加することで、
+復旧作業時に確実にそのコンピューターの環境で動作させることができます。
 
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
-
-![install option](img\aip-002.png)
-
-BE Builder で必要となるのモジュールは以下のものです。それ以外の選択は外して問題ありません。
-
-* ToolKit
-* Assesment Kit
-
-そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
-
-## Windows ADK 8.1 Update
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
-
-![install option](img\aip-002.png)
-
-BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
-そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
-
-## Windows ADK Windows 7
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
-
-![install option](img\aip-002.png)
-
-BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
-そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
-## Windows AIK
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
-
-![install option](img\aip-002.png)
-
-BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
-そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
-
-```
-code
-
-```
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-![pe](img/aip-002.png)
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## [Linux を使った起動環境](./builderLinux.md)
+あらかじめ構成済のLinuxベースの復元環境です。
+PEベースの起動環境を作成するには、ユーザーがPE KitをMicrosoftのサイトからダウンロードしてインストールする必要があります。
+Linux版はあらかじめ標準的なPCで動作するように構成したメディアをすぐに作成できます。
+GUIもWindows版と同じものですので操作は同じように簡単に行えます。
