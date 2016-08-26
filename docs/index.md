@@ -1,9 +1,9 @@
 # Windoows PE のインストールガイド
 
-AipではWidowsPEをインストールする必要があります
+ActiveImage Protectorでシステムのリカバリーを行う場合には起動環境のメディアを作成する必要がありますではWidowsPEをインストールする必要があります
 WindowsPEには何種類かのToolKitがあり、各々インストール方法が違いますので注意が必要です。
  
-## Windows ADK Anniversay Update 1607, 1511 の Windows ADK を使用
+## Windows ADK Anniversay Update 1607, 1511 
 
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
@@ -17,7 +17,7 @@ BE Builder で必要となるのモジュールは以下のものです。それ
 そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
 インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
 
-## Windows ADK 8.1 Update のWindows ADKを使用する
+## Windows ADK 8.1 Update
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
 ![install option](img\aip-002.png)
@@ -26,7 +26,7 @@ BE Builder で必要となるのモジュールは、０とoなのでそれ以�
 そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
 インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
 
-## Windows ADK Windows 7 のWindows ADKを使用する
+## Windows ADK Windows 7
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
 ![install option](img\aip-002.png)
@@ -34,7 +34,7 @@ BE Builder で必要となるのモジュールは、０とoなのでそれ以�
 BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
 そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
 インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
-## Windows AIK を使用する
+## Windows AIK
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
 ![install option](img\aip-002.png)
