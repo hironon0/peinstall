@@ -7,8 +7,8 @@ pages:
 
 markdown_extensions:
  - toc:
-    baselevel: 3
+    baselevel: 2
 
 site_favicon: favicon.ico
 
-theme: slate
+theme: readthedocs

@@ -4,72 +4,130 @@
 
 メニューからBE Buildeを起動します。
 
+Windows PE ベースの起動環境を作成するビルダーを開始するには［ユーティリティ］メニューから BE/起動環境ビルダー（Windows PE）をクリックします。
+※IT Pro Edition では使用できません。
 起動した環境にWindows PE Kitがインストールされていない場合には、MicrosoftのWebサイトからダウンロードしてインストールする必要があります。
+
 [Windows ADK/AIKのインストール](#installPE) の手順に従ってインストールしてください。
 
+### ようこそ画面
+
+![welcome](img/pe_builder_00.png)
+［次へ］をクリックしてください。
+ 
+### Windows PE ツールの選択
+
+作成に使用する Windows PE ツール キットを指定します。ホストが64ビット環境の場合、32ビットの環境も作成することができます。
+指定した Windows PE ツール キットの情報も表示されます。
+
+![PE Kit](img/pe_builder_01.png)
+ 
+［次へ］をクリックしてください。
+ 
+### デバイス ドライバーの追加
+
+起動環境に組み込むデバイス ドライバーを選択します。
+現在のシステムに存在するネットワークとストレージのドライバーが検出されて左ペインに表示されます。［INF から追加］をクリックすると、INF ファイルを指定して一覧に無いドライバーを追加することもできます。
+追加するドライバーを選択したら`［= = >］`をクリックして、組込対象に入れてください。組込対象から外す場合は対象を選択して`［< = =］`をクリックします。
+
+※ネットワークでは有線 LAN（Ethernet）ドライバーのみサポートします。
+
+![add drivers](img/pe_builder_02.png)
+
+［次へ］をクリックします。
+ 
+### 環境の設定
+
+表示言語とキーボード タイプ、タイムゾーン、画面解像度を指定します。
+![add drivers](img/pe_builder_03.png)
+
+［次へ］をクリックします。
+ 
+### 作成タイプの指定
+ 
+PreBoot 環境を選択すると、ハードディスクから起動する起動環境をシステム ボリュームに作成します。
+ISO イメージ ファイルを選択すると、指定したパスに ISO イメージ ファイルを作成します。ISO の作成後 DVD メディアに書きこむことも可能です。
+USB 起動メディアを選択すると、指定した USB メモリから起動する起動環境を作成します。使用する USB メディアはドライブ文字で指定します。なお、使用する USB メモリの内容は全て消去されますのでご注意ください。
+
+![Media Type](img/pe_builder_04.png)
+
+［次へ］をクリックしてください。
+
+### 設定の確認
+ 
+設定内容を確認します。
+
+![Summary](img/pe_builder_05.png)
+
+［戻る］をクリックすると前の設定画面に戻れます。また、ノードをクリックすることで任意の設定に戻ることができます。
+［起動環境の作成］をクリックすると確認メッセージが表示され、［OK］をクリックすると作成が始まります。
+ 
+作成の進捗が表示されます。
+
+![Progress](img/pe_builder_06.png)
+ 
+起動環境の作成が終了すると以下のメッセージが表示されます。
+ 
+［OK］をクリックして閉じてください。
+ 
+### PreBoot 環境作成後の設定
+ 
+PreBoot 環境を作成した場合は、環境設定の［PreBoot 設定］でブート設定を有効にしてください。
+スイッチをクリックすると［無効］から［有効］に変更できます。
+
+ブート設定変更後、Windows ブート マネージャーからオプションとして起動可能となります。
+ 
+エンター キーを押下すると起動します。
+起動環境を終了するには［操作］メニューの［終了］からシャットダウン、また
 
 ----
 
-## <a id='installPE'></a>Windoows ADK/AIK のインストール
+<a id='installPE'></a>
+# Wndoows ADK/AIK のインストール
 
 ActiveImage Protectorでシステムのリカバリーを行う場合には起動環境のメディアを作成する必要がありますではWidowsPEをインストールする必要があります
-WindowsPEには何種類かのToolKitがあり、各々インストール方法が違いますので注意が必要です。
+WindowsPEには何種類かのToolKitがあり、各々インストール方法が違いますので注意してください。
  
-### Windows ADK Anniversay Update 1607, 1511 
+## Windows ADK Anniversay Update 1607, 1511 
 
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
-![install option](img\aip-002.png)
+![install option](img\adk.png)
 
-BE Builder で必要となるのモジュールは以下のものです。それ以外の選択は外して問題ありません。
+Windows ADK では、以下のコンポーネントをインストールすることが必要です。
 
-* ToolKit
-* Assesment Kit
+* Deployment Tools
+* Windows Preinstallation Environment(Windows PE)
 
-そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
+それ以外の選択は外して問題ありません。
 
-### Windows ADK 8.1 Update
+そのままインストーラーの指示に従ってADKをインストールしてください。
+インストールが完了したら、BE Builderを起動しなおすとPE Kitの選択が可能になります。
+ 
+
+## Windows ADK 8.1 Update
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
-![install option](img\aip-002.png)
+![install option](img\adk.png)
+
+## Windows ADK Windows 7
+ダウンロードしたファイルを実行すると以下の画面が表示されます。
+
+![install option](img\adk.png)
 
 BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
 そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
 インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
 
-### Windows ADK Windows 7
+## Windows AIK
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
-![install option](img\aip-002.png)
+![install option](img\adk.png)
 
 BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
 そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
 インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
 
-### Windows AIK
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
+![pe](img/adk.png)
 
-![install option](img\aip-002.png)
-
-BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
-そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
-
-```
-code
-
-```
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-![pe](img/aip-002.png)
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-
-
+Copyright by [NetJanan,Inc.](https://www.netjapan.co.jp)
