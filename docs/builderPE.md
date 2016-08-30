@@ -5,7 +5,7 @@
 メニューからBE Buildeを起動します。
 
 Windows PE ベースの起動環境を作成するビルダーを開始するには［ユーティリティ］メニューから BE/起動環境ビルダー（Windows PE）をクリックします。
-※IT Pro Edition では使用できません。
+**※IT Pro Edition では使用できません。**
 起動した環境にWindows PE Kitがインストールされていない場合には、MicrosoftのWebサイトからダウンロードしてインストールする必要があります。
 
 [Windows ADK/AIKのインストール](#installPE) の手順に従ってインストールしてください。
@@ -92,7 +92,7 @@ WindowsPEには何種類かのToolKitがあり、各々インストール方法�
 
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
-![install option](img\adk.png)
+![install option](img/adk.png)
 
 Windows ADK では、以下のコンポーネントをインストールすることが必要です。
 
@@ -108,12 +108,12 @@ Windows ADK では、以下のコンポーネントをインストールする�
 ## Windows ADK 8.1 Update
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
-![install option](img\adk.png)
+![install option](img/adk.png)
 
 ## Windows ADK Windows 7
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
-![install option](img\adk.png)
+![install option](img/adk.png)
 
 BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
 そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
@@ -122,12 +122,12 @@ BE Builder で必要となるのモジュールは、０とoなのでそれ以�
 ## Windows AIK
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
-![install option](img\adk.png)
+![install option](img/adk.png)
 
 BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
-そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
+そのままインストーラーの指示に従ってADKをインストールしてください。
+インストールが完了したら、BE Builderを起動しなおすとPE Kitの選択が可能になります。
 
 ![pe](img/adk.png)
 
-Copyright by [NetJanan,Inc.](https://www.netjapan.co.jp)
+&copy; [NetJanan,Inc.](https://www.netjapan.co.jp)
