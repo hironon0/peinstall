@@ -1,4 +1,7 @@
-site_name: 起動環境作成ガイド 
+site_name: Guide
+
+theme: cinder
+site_favicon: favicon.ico
 
 pages:
 - Home: index.md
@@ -6,9 +9,4 @@ pages:
 - Linux Builder: builderLinux.md
 
 markdown_extensions:
- - toc:
-    baselevel: 2
 
-site_favicon: favicon.ico
-
-theme: readthedocs

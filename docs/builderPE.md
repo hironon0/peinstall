@@ -2,11 +2,9 @@
 
 ## BE Builder(PE)を起動
 
-メニューからBE Buildeを起動します。
-
 Windows PE ベースの起動環境を作成するビルダーを開始するには［ユーティリティ］メニューから BE/起動環境ビルダー（Windows PE）をクリックします。
 **※IT Pro Edition では使用できません。**
-起動した環境にWindows PE Kitがインストールされていない場合には、MicrosoftのWebサイトからダウンロードしてインストールする必要があります。
+
 
 [Windows ADK/AIKのインストール](#installPE) の手順に従ってインストールしてください。
 
@@ -16,6 +14,14 @@ Windows PE ベースの起動環境を作成するビルダーを開始するに
 ［次へ］をクリックしてください。
  
 ### Windows PE ツールの選択
+
+以下のような画面になる場合には、環境にPE Kitがインストールされていません。
+起動した環境にWindows PE Kitがインストールされていない場合には、MicrosoftのWebサイトからダウンロードしてインストールする必要があります。
+
+![Missing PE Kit](img/pe_builder_01-1.png)
+推奨するツールはここから、というリンクをクリックして画面に従ってダウンロードしてください。
+
+[Windows ADK/AIKのインストール](#installPE) の手順に従ってインストールしてください。
 
 作成に使用する Windows PE ツール キットを指定します。ホストが64ビット環境の場合、32ビットの環境も作成することができます。
 指定した Windows PE ツール キットの情報も表示されます。
@@ -28,6 +34,7 @@ Windows PE ベースの起動環境を作成するビルダーを開始するに
 
 起動環境に組み込むデバイス ドライバーを選択します。
 現在のシステムに存在するネットワークとストレージのドライバーが検出されて左ペインに表示されます。［INF から追加］をクリックすると、INF ファイルを指定して一覧に無いドライバーを追加することもできます。
+
 追加するドライバーを選択したら`［= = >］`をクリックして、組込対象に入れてください。組込対象から外す場合は対象を選択して`［< = =］`をクリックします。
 
 ※ネットワークでは有線 LAN（Ethernet）ドライバーのみサポートします。
@@ -39,7 +46,8 @@ Windows PE ベースの起動環境を作成するビルダーを開始するに
 ### 環境の設定
 
 表示言語とキーボード タイプ、タイムゾーン、画面解像度を指定します。
-![add drivers](img/pe_builder_03.png)
+
+![Environment](img/pe_builder_03.png)
 
 ［次へ］をクリックします。
  
@@ -70,29 +78,45 @@ USB 起動メディアを選択すると、指定した USB メモリから起�
  
 ［OK］をクリックして閉じてください。
  
-### PreBoot 環境作成後の設定
- 
-PreBoot 環境を作成した場合は、環境設定の［PreBoot 設定］でブート設定を有効にしてください。
-スイッチをクリックすると［無効］から［有効］に変更できます。
-
-ブート設定変更後、Windows ブート マネージャーからオプションとして起動可能となります。
- 
-エンター キーを押下すると起動します。
-起動環境を終了するには［操作］メニューの［終了］からシャットダウン、また
 
 ----
 
 <a id='installPE'></a>
-# Wndoows ADK/AIK のインストール
+# ADK/AIK のインストール
 
 ActiveImage Protectorでシステムのリカバリーを行う場合には起動環境のメディアを作成する必要がありますではWidowsPEをインストールする必要があります
 WindowsPEには何種類かのToolKitがあり、各々インストール方法が違いますので注意してください。
  
 ## Windows ADK Anniversay Update 1607, 1511 
 
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
+Windows ADK for Windows 10 Version 1607, 1511の
+[ダウンロード](https://developer.microsoft.com/ja-jp/windows/hardware/windows-assessment-deployment-kit#adkwin10)をします。
 
-![install option](img/adk.png)
+![ADK 10 Download](img/adk10_Download.png)
+ダウンロードしたファイルを実行すると以下の画面が表示されます。
+そのままインストーラーの指示に従ってADKをインストールしてください。
+
+### 場所の指定
+
+インストール場所の指定です。通常は変更の必要はありません。
+
+![Location](img/adk81_001.png)
+
+### Windowsキット プライバシー
+
+Microsoftに使用状況のデータを送信します。選択はどちらでも構いません。
+
+![install option](img/adk81_002.png)
+
+### 使用許諾契約
+
+![install option](img/adk81_003.png)
+
+
+初期状態はいくつかにチェックが入っています。
+
+
+![install option](img/adk81_004.png)
 
 Windows ADK では、以下のコンポーネントをインストールすることが必要です。
 
@@ -101,16 +125,75 @@ Windows ADK では、以下のコンポーネントをインストールする�
 
 それ以外の選択は外して問題ありません。
 
-そのままインストーラーの指示に従ってADKをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kitの選択が可能になります。
- 
+* Deployment Tools
+
+![install option](img/adk81_005.png)
+
+* Windows Preinstallation Environment(Windows PE)
+
+![install option](img/adk81_006.png)
+
+### 機能をインストールしています...
+
+![install option](img/adk81_007.png)
+
+
+### 完了
+
+![install option](img/adk81_008.png)
+
+インストールが完了しました。これでユーティリティからADKを参照することができるようになりました。
 
 ## Windows ADK 8.1 Update
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
-![install option](img/adk.png)
+[Windows 8.1 Update 用 Windows アセスメント & デプロイメント キット (Windows ADK)のぺージ]((https://developer.microsoft.com/ja-jp/windows/hardware/windows-assessment-deployment-kit)
+へ行き、[Windows ADK for Windows 8.1を入手する ](https://go.microsoft.com/fwlink/p/?LinkId=393005) を押してください。
+
+ダウンロードしたファイル\(adksetup.exe\)を実行すると以下の画面が表示されます。
+
+### 場所の指定
+
+インストール場所の指定です。通常は変更の必要はありません。
+
+![install option](img/adk81_001.png)
+
+### カスタマー エクスペリエンス向上プログラム(CEIP)への参加
+
+Microsoftに使用状況のデータを送信します。選択はどちらでも構いません。
+
+![install option](img/adk81_002.png)
+
+### 使用許諾契約
+
+使用許諾契約に同意をします。
+
+![install option](img/adk81_003.png)
+
+### インストールを行う機能を選択してください
+
+Windows ADK では、以下のコンポーネントをインストールすることが必要です。
+
+* Deployment Tools
+* Windows Preinstallation Environment(Windows PE)
+
+それ以外の選択は外して問題ありません。
+
+![install option](img/adk81_004.png)
+
+![install option](img/adk81_005.png)
+
+![install option](img/adk81_006.png)
+
+### 機能をインストールしています
+
+![install option](img/adk81_007.png)
+
+### インストール完了
+
+![install option](img/adk81_008.png)
 
 ## Windows ADK Windows 7
+
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
 ![install option](img/adk.png)
@@ -120,6 +203,7 @@ BE Builder で必要となるのモジュールは、０とoなのでそれ以�
 インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
 
 ## Windows AIK
+
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
 
 ![install option](img/adk.png)
@@ -131,3 +215,5 @@ BE Builder で必要となるのモジュールは、０とoなのでそれ以�
 ![pe](img/adk.png)
 
 &copy; [NetJanan,Inc.](https://www.netjapan.co.jp)
+
+
