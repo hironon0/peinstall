@@ -87,10 +87,13 @@ USB 起動メディアを選択すると、指定した USB メモリから起�
 ActiveImage Protectorでシステムのリカバリーを行う場合には起動環境のメディアを作成する必要がありますではWidowsPEをインストールする必要があります
 WindowsPEには何種類かのToolKitがあり、各々インストール方法が違いますので注意してください。
  
+<a id="adk10"></a>
 ## Windows ADK Anniversay Update 1607, 1511 
 
 Windows ADK for Windows 10 Version 1607, 1511の
 [ダウンロード](https://developer.microsoft.com/ja-jp/windows/hardware/windows-assessment-deployment-kit#adkwin10)をします。
+
+2016年8月現在は以下のようなページになっていますので、使用するものをダウンロードしてください。
 
 ![ADK 10 Download](img/adk10_Download.png)
 ダウンロードしたファイルを実行すると以下の画面が表示されます。
@@ -144,10 +147,10 @@ Windows ADK では、以下のコンポーネントをインストールする�
 
 インストールが完了しました。これでユーティリティからADKを参照することができるようになりました。
 
+<a id="adk81"></a>
 ## Windows ADK 8.1 Update
 
-[Windows 8.1 Update 用 Windows アセスメント & デプロイメント キット (Windows ADK)のぺージ]((https://developer.microsoft.com/ja-jp/windows/hardware/windows-assessment-deployment-kit)
-へ行き、[Windows ADK for Windows 8.1を入手する ](https://go.microsoft.com/fwlink/p/?LinkId=393005) を押してください。
+[Windows 8.1 Update 用 Windows アセスメント & デプロイメント キット (Windows ADK)]((https://developer.microsoft.com/ja-jp/windows/hardware/windows-assessment-deployment-kit)のぺージへ行き、[Windows ADK for Windows 8.1を入手する ](https://go.microsoft.com/fwlink/p/?LinkId=393005) を押してください。
 
 ダウンロードしたファイル\(adksetup.exe\)を実行すると以下の画面が表示されます。
 
@@ -192,27 +195,20 @@ Windows ADK では、以下のコンポーネントをインストールする�
 
 ![install option](img/adk81_008.png)
 
-## Windows ADK Windows 7
+## Windows ADK 8.0 
 
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
+特別な理由がない場合は[Windows ADK for Windows 10](#adk10)または[Windows ADK 8.1 Update](#adk81)を使ってください。
 
-![install option](img/adk.png)
+インストール手順は同じです。
 
-BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
-そのままインストーラーの指示に従ってＡＤＫをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kiｔの選択が可能になります。
 
 ## Windows AIK
+AIKを動作させるにはWindows Vista, 7, Server 2003 SP1, Server 2008, Server 2008 R2である必要があります。
+また.NET 2.0が必要です。
+![AIK Requirements](img/aik_requirements.png)
 
-ダウンロードしたファイルを実行すると以下の画面が表示されます。
-
-![install option](img/adk.png)
-
-BE Builder で必要となるのモジュールは、０とoなのでそれ以外の選択は外して問題ありません。
-そのままインストーラーの指示に従ってADKをインストールしてください。
-インストールが完了したら、BE Builderを起動しなおすとPE Kitの選択が可能になります。
-
-![pe](img/adk.png)
+AIKはisoでの提供になります。CDに焼くかマウントしてインストールします。
+CDまたはマウントすると自動起動しますが、起動しない場合はStartCD.exeをクリックして起動します。
 
 &copy; [NetJanan,Inc.](https://www.netjapan.co.jp)
 
