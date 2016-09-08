@@ -208,7 +208,7 @@ AIKを動作させるにはWindows Vista, 7, Server 2003 SP1, Server 2008, Serve
 ![AIK Requirements](img/aik_requirements.png)
 
 AIKはisoでの提供になります。CDに焼くかマウントしてインストールします。
-CDまたはマウントすると自動起動しますが、起動しない場合はStartCD.exeをクリックして起動します。
+CDまたはマウントすると自動起動しますが、起動しない場合はStartCD.exeをクリックしてインストールします。
 
 &copy; [NetJanan,Inc.](https://www.netjapan.co.jp)
 
